@@ -1,0 +1,9 @@
+CREATE TABLE admins (Firstname VARCHAR(50), Lastname VARCHAR(50), Username VARCHAR(50), Password VARCHAR(50));
+CREATE TABLE students (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, Firstname VARCHAR(50), Lastname VARCHAR(50), Username VARCHAR(50), Password VARCHAR(50), Address INTEGER NOT NULL, UNIQUE(Username));
+CREATE TABLE address (Belongs_To INTEGER NOT NULL, Street_Address VARCHAR(50), City VARCHAR(50), State VARCHAR(50), Zip_Code VARCHAR(50), Country VARCHAR(50), UNIQUE(Belongs_To));
+
+INSERT INTO admins (Firstname, Lastname, Username, Password) VALUES ("Steven", "Acosta", "StevenDLL", "Password");
+
+INSERT INTO students (Firstname, Lastname, Username, Password, Address) VALUES ("Steven", "Acosta", "Steven", "Password", 1);
+
+
