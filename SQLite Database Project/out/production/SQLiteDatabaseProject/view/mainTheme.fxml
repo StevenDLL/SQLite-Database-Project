@@ -1,14 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.MainController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #141f27;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+    <Label fx:id="currentUserLabel" layoutX="18.0" layoutY="184.0" text="Username Here" textAlignment="CENTER" textFill="WHITE">
+        <font>
+            <Font name="System Bold Italic" size="18.0" />
+        </font>
+    </Label>
+    <TabPane fx:id="mainTabPane" layoutX="170.0" prefHeight="720.0" prefWidth="1110.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab fx:id="dataViewTab" text="Data View">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #21242D;">
+                <TitledPane animated="false" collapsible="false" layoutY="-1.0" prefHeight="115.0" prefWidth="1110.0" text="Search Parameters:">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1108.0">
+                        <TextField fx:id="idTextField" layoutX="88.0" layoutY="8.0" prefHeight="25.0" prefWidth="40.0" />
+                        <Label fx:id="idLabel" layoutX="7.0" layoutY="11.0" text="Student ID:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="firstNameLabel" layoutX="139.0" layoutY="11.0" text="Firstname:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="firstNameTextField" layoutX="218.0" layoutY="8.0" prefHeight="25.0" prefWidth="130.0" />
+                        <Label fx:id="lastNameLabel" layoutX="361.0" layoutY="12.0" text="Lastname:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="lastNameTextField" layoutX="440.0" layoutY="9.0" prefHeight="25.0" prefWidth="130.0" />
+                        <Label fx:id="userNameLabel" layoutX="585.0" layoutY="11.0" text="Username:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="userNameTextField" layoutX="665.0" layoutY="8.0" prefHeight="25.0" prefWidth="130.0" />
+                        <Button fx:id="searchButton" layoutX="802.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#doSearch" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #ff5311;" text="SEARCH" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Label fx:id="streetLabel" disable="true" layoutX="9.0" layoutY="51.0" text="Street Address:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="streetTextField" disable="true" layoutX="115.0" layoutY="48.0" prefHeight="27.0" prefWidth="165.0" />
+                        <Label fx:id="cityLabel" disable="true" layoutX="288.0" layoutY="52.0" text="City:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="cityTextField" disable="true" layoutX="327.0" layoutY="48.0" prefHeight="27.0" prefWidth="150.0" />
+                        <Label fx:id="stateLabel" disable="true" layoutX="484.0" layoutY="52.0" text="State:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="stateTextField" disable="true" layoutX="531.0" layoutY="49.0" prefHeight="27.0" prefWidth="160.0" />
+                        <Label fx:id="zipCodeLabel" disable="true" layoutX="698.0" layoutY="52.0" text="Zip Code:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="zipCodeTextField" disable="true" layoutX="767.0" layoutY="48.0" prefHeight="27.0" prefWidth="100.0" />
+                        <Label fx:id="countryLabel" disable="true" layoutX="873.0" layoutY="52.0" text="Country:">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="countryTextField" disable="true" layoutX="942.0" layoutY="49.0" prefHeight="27.0" prefWidth="160.0" />
+                  <Button fx:id="showAllButton" layoutX="956.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#doShowAll" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #655e9a;" text="SHOW ALL" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                    </AnchorPane>
+                </TitledPane>
+                <TableView fx:id="dataTableView" layoutY="112.0" prefHeight="580.0" prefWidth="1110.0">
+                    <columns>
+                        <TableColumn fx:id="idColumn" prefWidth="46.0" text="ID" />
+                        <TableColumn fx:id="firstNameColumn" prefWidth="148.0" text="Firstname" />
+                        <TableColumn fx:id="lastNameColumn" prefWidth="156.0" text="Lastname" />
+                        <TableColumn fx:id="userNameColumn" prefWidth="159.0" text="Username" />
+                        <TableColumn fx:id="passwordColumn" prefWidth="148.0" text="Password" />
+                  <TableColumn fx:id="addressIDColumn" prefWidth="75.0" text="Address ID" />
+                        <TableColumn fx:id="addressColumn" prefWidth="452.0" text="Full Address" />
+                    </columns>
+                </TableView>
+            </AnchorPane>
+        </Tab>
+        <Tab fx:id="settingsTab" disable="true" text="Settings">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </Tab>
+    </TabPane>
+    <ImageView fx:id="folderImageView" fitHeight="128.0" fitWidth="128.0" layoutX="19.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../images/folder.png" />
+    </ImageView>
+   <Button layoutX="20.0" layoutY="594.0" mnemonicParsing="false" onMouseClicked="#addStudent" text="ADD NEW">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font></Button>
+   <Label layoutX="3.0" layoutY="165.0" text="Current User:" textFill="#ff5311">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+   <Button layoutX="20.0" layoutY="634.0" mnemonicParsing="false" onMouseClicked="#editSelected" text="EDIT SELECTED">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button layoutX="20.0" layoutY="674.0" mnemonicParsing="false" onMouseClicked="#deleteSelected" text="DELETE SELECTED">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
 </AnchorPane>
